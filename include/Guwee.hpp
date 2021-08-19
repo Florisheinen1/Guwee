@@ -1,0 +1,3 @@
+namespace Guwee {
+	void initGuwee();
+}

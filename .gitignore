@@ -30,3 +30,10 @@
 *.exe
 *.out
 *.app
+
+# Output folder
+build/
+
+# Platform specific scripts
+*.sh
+*.bat
