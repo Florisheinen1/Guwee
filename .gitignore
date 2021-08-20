@@ -37,3 +37,6 @@ build/
 # Platform specific scripts
 *.sh
 *.bat
+
+# Buildable dependencies like glad
+deps/
