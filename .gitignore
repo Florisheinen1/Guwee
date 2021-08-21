@@ -40,3 +40,6 @@ build/
 
 # Buildable dependencies like glad
 deps/
+
+# Visual Studio Code project properties
+.vscode/

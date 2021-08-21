@@ -1,7 +1,9 @@
 #include <iostream>
-#include "../include/Guwee.hpp"
+#include "Guwee.hpp"
 
-#include "../deps/glad/include/glad/gl.h"
+#define GLFW_INCLUDE_NONE
+#include "GLFW/glfw3.h"
+#include "glad/gl.h"
 
 
 void printErr(const char* errorMessage) {
@@ -26,6 +28,16 @@ void Guwee::initGuwee() {
 	std::cout << "Init guwee!" << std::endl;
 	checkGlErrors();
 	std::cout << "Init vao" << std::endl;
+
+	if (glfwInit() == GLFW_FALSE) {
+		std::cout << "Failed to initialise GLFW" << std::endl;
+	} else {
+		std::cout << "Successfully initialised GLFW" << std::endl;
+	}
+
+
+
+
 	
 	GLuint VAO;
 	glGenVertexArrays(1, &VAO);
