@@ -13,6 +13,8 @@ set(GLFW_INCLUDE_DIR "${GUWEE_DIR}/external/glfw/include")
 
 set(FREETYPE_INCLUDE_DIR "${GUWEE_DIR}/external/freetype/include")
 
+set(GLM_INCLUDE_DIR "${GUWEE_DIR}/external/glm/glm")
+
 # Build GLAD library
 add_subdirectory(external/glad/cmake)
 glad_add_library(GuweeGlad STATIC LOCATION "${GLAD_DIR}" API "gl:core=3.3")

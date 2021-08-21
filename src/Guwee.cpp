@@ -8,10 +8,12 @@
 #include "ft2build.h"
 #include FT_FREETYPE_H
 
+#include "glm.hpp"
+
 struct Character {
 	unsigned int TextureID;
-	//glm::ivec2 Size;
-	//glm::ivec2 Bearing;
+	glm::ivec2 Size;
+	glm::ivec2 Bearing;
 	unsigned int Advance;
 };
 
@@ -59,16 +61,17 @@ void loadCharacters() {
 		
 		Character character = {
 			texture,
-			//glm::ivec2(face->glyph->bitmap.width, face->glyph->bitmap.rows),
-			//glm::ivec2(face->glyph->bitmap_left, face->glyph->bitmap_top),
+			glm::ivec2(face->glyph->bitmap.width, face->glyph->bitmap.rows),
+			glm::ivec2(face->glyph->bitmap_left, face->glyph->bitmap_top),
 			(unsigned int) face->glyph->advance.x
 		};
+		std::cout << ".";
 		//Characters.insert(std::pair<char, Character>(c, character));
 	}
 
 	FT_Done_Face(face);
 	FT_Done_FreeType(ft);
-
+	std::cout << std::endl;
 	/*
 	glGenVertexArrays(1, &FONT_VAO);
 	glGenBuffers(1, &FONT_VBO);
@@ -102,7 +105,6 @@ void checkGlErrors() {
 
 void Guwee::initGuwee() {
 	std::cout << "Init guwee!" << std::endl;
-	checkGlErrors();
 	std::cout << "Init vao" << std::endl;
 
 
@@ -114,11 +116,11 @@ void Guwee::initGuwee() {
 
 	loadCharacters();
 
+	checkGlErrors();
 
 
 	
 	GLuint VAO;
 	glGenVertexArrays(1, &VAO);
 
-	checkGlErrors();
 }
