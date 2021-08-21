@@ -11,6 +11,8 @@ set(GLAD_SOURCE_DIR "${GLAD_DIR}/src")
 
 set(GLFW_INCLUDE_DIR "${GUWEE_DIR}/external/glfw/include")
 
+set(FREETYPE_INCLUDE_DIR "${GUWEE_DIR}/external/freetype/include")
+
 # Build GLAD library
 add_subdirectory(external/glad/cmake)
 glad_add_library(GuweeGlad STATIC LOCATION "${GLAD_DIR}" API "gl:core=3.3")
@@ -18,6 +20,10 @@ glad_add_library(GuweeGlad STATIC LOCATION "${GLAD_DIR}" API "gl:core=3.3")
 # Build GLFW library
 add_subdirectory(external/glfw)
 add_library(GuweeGlfw ALIAS glfw)
+
+# Build freetype library
+add_subdirectory(external/freetype)
+add_library(GuweeFreetype ALIAS freetype)
 
 # Build Guwee library
 add_subdirectory(src)
