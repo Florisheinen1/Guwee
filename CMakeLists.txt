@@ -30,5 +30,8 @@ add_library(GuweeFreetype ALIAS freetype)
 # Build Guwee library
 add_subdirectory(src)
 
+# Copy resources
+file(COPY "${GUWEE_DIR}/resources" DESTINATION "${CMAKE_BINARY_DIR}/resources")
+
 # Build example executables
 add_subdirectory(examples)

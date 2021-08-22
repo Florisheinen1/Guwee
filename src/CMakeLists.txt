@@ -8,3 +8,12 @@ target_include_directories(Guwee PUBLIC
 	"${GLFW_INCLUDE_DIR}"
 	"${FREETYPE_INCLUDE_DIR}"
 	"${GLM_INCLUDE_DIR}")
+
+add_executable(FontTest  fontTest.cpp)
+target_link_libraries(FontTest PUBLIC GuweeGlad GuweeGlfw GuweeFreetype)
+target_include_directories(FontTest PUBLIC
+	"${GUWEE_INCLUDE_DIR}"
+	"${GLAD_INCLUDE_DIR}"
+	"${GLFW_INCLUDE_DIR}"
+	"${FREETYPE_INCLUDE_DIR}"
+	"${GLM_INCLUDE_DIR}")
