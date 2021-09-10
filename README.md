@@ -1,2 +1,2 @@
 # Guwee
-Library for creating GUI applications easily
+A cross-platform, simple yet low level library for creating GUI applications in C++
